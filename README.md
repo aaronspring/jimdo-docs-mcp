@@ -1,6 +1,6 @@
 # Jimdo docs MCP
 
-> **Note**  
+> [!Note]
 > Portfolio repo to apply as [AI Enablement Partner](https://jobs.ashbyhq.com/jimdo.com/92fb7da5-2161-45d8-8a73-87e2a735c5b9)
 
 Chat with your jimdo docs.
@@ -82,6 +82,41 @@ Would you like me to prioritize the checklist for your site or optimize a specif
 </details>
 
 ![Qdrant Jimdo Docs MCP integration in VSCode](jimdo_docs_MCP_vscode.jpg)
+
+
+## Architecture
+
+```mermaid
+flowchart LR
+      subgraph AI_IDE["AI IDE tools\n(Codex, Copilot, Claude, VS Code MCP)"]
+          Q["Input user query"]
+          A["Output answers based on Jimdo docs"]
+      end
+
+      subgraph MCP["mcp-server-qdrant"]
+          R["Route query & params"]
+          E["Return matched docs"]
+      end
+
+      subgraph QD["Managed Qdrant"]
+          C["Jimdo docs collection (dense + sparse vectors)"]
+      end
+
+      subgraph Ingest["Ingestion pipeline"]
+          S["Sitemap crawl scrape_jimdo_docs.py"]
+          CSV["jimdo_docs.csv (raw pages + metadata)"]
+          EMB["Upload sparse and dense embeddings: generate_and_upload_embeddings.py"]
+      end
+
+      %% Query/answer path
+      Q --> R
+      R <--> C
+      C <--> E
+      E --> A
+
+      %% Ingestion path
+      S --> CSV --> EMB --> C
+```
 
 
 ## Prerequisites
