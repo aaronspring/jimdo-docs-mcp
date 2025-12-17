@@ -1,9 +1,5 @@
 {
   "servers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"]
-    },
     "jimdo_docs": {
       "command": "uvx",
       "args": [
@@ -16,7 +12,6 @@
         "QDRANT_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJyIn0.DoWUjYic92IDLsYevtk9oFCHSqooOJ0tcpAntcQVbT4",
         "COLLECTION_NAME": "jimdo_docs_recursive-750-100",
         "EMBEDDING_MODEL": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "SPARSE_EMBEDDING_MODEL": "Qdrant/bm42-all-minilm-l6-v2-attentions",
         "SPARSE_EMBEDDING_NAME": "fast-bm42-all-minilm-l6-v2-attentions",
         "TOOL_FIND_DESCRIPTION": "Search Jimdo help documents using dense semantic search. Use natural language queries rather than just keywords. Returns up to 10 most relevant document excerpts. Always include document URLs in your answer to allow users to verify sources. Keep queries to qdrant very similar to the user input. Don't add too many keywords.",
         "TOOL_HYBRID_FIND_DESCRIPTION": "Advanced configurable hybrid search for Jimdo help documents. Use natural language queries to leverage both semantic understanding and keyword matching. ALWAYS set these parameters: dense_limit=10 (semantic results), sparse_limit=10 (keyword results), final_limit=10 (merged results). Use fusion_method='dbsf'. Include document URLs in your answer. Keep queries to qdrant very similar to the user input. Don't add too many keywords.",
