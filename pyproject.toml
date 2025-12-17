@@ -1,0 +1,19 @@
+[project]
+name = "jimdo-docs-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "fastembed>=0.7.4",
+    "ipykernel>=7.1.0",
+    "langchain>=1.2.0",
+    "langchain-community>=0.4.1",
+    "lxml>=6.0.2",
+    "pandas>=2.3.3",
+    "qdrant-client>=1.16.2",
+    "python-dotenv>=1.0.1",
+    "onnxruntime==1.20.1",
+    "tqdm>=4.67.1",
+]
