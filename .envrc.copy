@@ -1,0 +1,2 @@
+QDRANT_URL=https://95d213c9-ed91-4fbd-8d89-3aa4f0b972f4.eu-central-1-0.aws.cloud.qdrant.io
+QDRANT_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJyIn0.DoWUjYic92IDLsYevtk9oFCHSqooOJ0tcpAntcQVbT4 # only read
